@@ -1,0 +1,155 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Burger menu styles */
+.burger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.burger-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 6px;
+    transition: background 0.3s;
+}
+
+.burger-icon:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.burger-icon span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: white;
+    margin: 3px 0;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+.burger-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Video menu */
+.video-menu {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    min-width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-menu.active {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-menu h3 {
+    color: white;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.video-item {
+    padding: 12px 15px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.2s;
+}
+
+.video-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.video-item:last-child {
+    border-bottom: none;
+}
+
+.video-item.current {
+    background: rgba(102, 126, 234, 0.5);
+}
+
+.video-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.video-date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.no-videos {
+    padding: 20px 15px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+/* Custom scrollbar for menu */
+.video-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.video-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.video-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.video-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
