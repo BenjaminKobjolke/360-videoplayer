@@ -17,11 +17,11 @@ if (!empty($files)) {
     $newestVideo = 'media/360.mp4';
 }
 
-// Set page-specific variables
-$pageTitle = '360° Video Player';
-$pageDescription = 'Interactive 360-degree video player';
-$playerScript = 'js/player.js';
-$showControls = false;  // Hide controls for immersive experience
+// Set page-specific variables for VR mode
+$pageTitle = '360° Video Player - VR Mode';
+$pageDescription = 'Interactive 360-degree video player for Meta Quest';
+$playerScript = 'js/player-vr.js';
+$showControls = true;  // Enable video controls for fullscreen/VR button
 
 // Include shared layout
 require 'player-layout.php';
