@@ -289,6 +289,25 @@ usort($videos, function($a, $b) {
             color: #999;
             font-size: 14px;
         }
+        .video-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .download-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #218838;
+        }
         .delete-btn {
             background: #dc3545;
             color: white;
@@ -297,7 +316,6 @@ usort($videos, function($a, $b) {
             border-radius: 4px;
             font-size: 12px;
             cursor: pointer;
-            margin-left: 10px;
             transition: background 0.3s;
         }
         .delete-btn:hover {
@@ -368,7 +386,10 @@ usort($videos, function($a, $b) {
                                 <div class="video-name"><?php echo htmlspecialchars(basename($video)); ?></div>
                                 <div class="video-date"><?php echo date('Y-m-d H:i', filemtime($video)); ?></div>
                             </div>
-                            <button class="delete-btn" onclick="confirmDelete('<?php echo htmlspecialchars(basename($video)); ?>')">Delete</button>
+                            <div class="video-actions">
+                                <a href="../<?php echo $mediaDirectory . basename($video); ?>" class="download-btn" download>Download</a>
+                                <button class="delete-btn" onclick="confirmDelete('<?php echo htmlspecialchars(basename($video)); ?>')">Delete</button>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
